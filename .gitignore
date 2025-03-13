@@ -1,0 +1,9 @@
+# API_KEY
+*.xcconfig
+APIService-Info.plist
+
+# Firebase
+GoogleService-Info.plist
+
+# TODO
+Todo.md
