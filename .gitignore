@@ -1,6 +1,7 @@
 # API_KEY
 *.xcconfig
 APIService-Info.plist
+Info.plist
 
 # Firebase
 GoogleService-Info.plist

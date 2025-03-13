@@ -22,7 +22,6 @@
 		044B14902BF625A50046FF44 /* ThemeColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B148F2BF625A50046FF44 /* ThemeColorManager.swift */; };
 		044B14922BF625C40046FF44 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B14912BF625C40046FF44 /* ThemeColor.swift */; };
 		0468744A2BC2765900B5CC11 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046874492BC2765900B5CC11 /* ThemeView.swift */; };
-		047A33322D828F8F009241E0 /* APIService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047A33312D828F8F009241E0 /* APIService-Info.plist */; };
 		047A33342D829A82009241E0 /* Todo.md in Resources */ = {isa = PBXBuildFile; fileRef = 047A33332D829A82009241E0 /* Todo.md */; };
 		048A2ACC2BF094B600F2D04B /* LocalNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A2ACB2BF094B600F2D04B /* LocalNotificationHelper.swift */; };
 		048E70EF2B81B90A00817D7B /* PhonetryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E70EE2B81B90A00817D7B /* PhonetryApp.swift */; };
@@ -120,7 +119,6 @@
 		044B14912BF625C40046FF44 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		046874492BC2765900B5CC11 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		047A332F2D828853009241E0 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
-		047A33312D828F8F009241E0 /* APIService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APIService-Info.plist"; sourceTree = "<group>"; };
 		047A33332D829A82009241E0 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Todo.md; sourceTree = "<group>"; };
 		048A2ACB2BF094B600F2D04B /* LocalNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationHelper.swift; sourceTree = "<group>"; };
 		048E70EB2B81B90A00817D7B /* Phonetry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phonetry.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,8 +218,8 @@
 				04F78F242B8C38CD00B1A02F /* TestView.swift */,
 				04C9B77C2B956BDC00608F7B /* InitialView */,
 				04C9B77D2B956C0C00608F7B /* Home */,
-				04C9B77E2B956C1800608F7B /* Storage */,
 				04C9B77F2B956C2800608F7B /* Camera */,
+				04C9B77E2B956C1800608F7B /* Storage */,
 				04C9B7802B956C3100608F7B /* Profile */,
 			);
 			path = View;
@@ -273,7 +271,6 @@
 			children = (
 				04B1282F2BB90BE30031EA15 /* GoogleService-Info.plist */,
 				04B127F72BB7D7E50031EA15 /* Info.plist */,
-				047A33312D828F8F009241E0 /* APIService-Info.plist */,
 				047A33332D829A82009241E0 /* Todo.md */,
 				048E70EE2B81B90A00817D7B /* PhonetryApp.swift */,
 				04B128332BB961B20031EA15 /* MainTabView.swift */,
@@ -533,7 +530,6 @@
 				048E70F62B81B90B00817D7B /* Preview Assets.xcassets in Resources */,
 				048E70F32B81B90B00817D7B /* Assets.xcassets in Resources */,
 				04B128302BB90BE30031EA15 /* GoogleService-Info.plist in Resources */,
-				047A33322D828F8F009241E0 /* APIService-Info.plist in Resources */,
 				047A33342D829A82009241E0 /* Todo.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +790,7 @@
 		};
 		048E71112B81B90C00817D7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 047A332F2D828853009241E0 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

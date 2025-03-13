@@ -13,19 +13,28 @@ class ImageClassificaionVM: ObservableObject {
     @Published var capturedImage: UIImage? = nil
     @Published var classificationresponse: ClassificaionResponse? = nil
     @Published var isGetResult: Bool = false
+    private var requestUrl: String? {
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "IC_REQUEST_URL") as? String else {
+            return nil
+        }
+        
+        return url
+    }
  
-    func sendImage(errorAlarmPresented: Binding<Bool>){
+    func sendImage(errorAlarmPresented: Binding<Bool>) {
         
         guard let image = capturedImage else { return }
         guard let imageData = image.jpegData(compressionQuality: 0.9) else { return }
         
-        let url = URL(string: "http://192.168.0.1:8000/api/v1/deeplearning/classify/")!
+        guard let requestUrl = requestUrl else { return }
+        
+        let url = URL(string: "\(requestUrl)")!
 
        
         // ----------------------------------------------------------------------------
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-
+        
         // 멀티파트 폼 데이터의 boundary 생성
         let boundary = "Boundary-\(UUID().uuidString)"
 
@@ -43,12 +52,14 @@ class ImageClassificaionVM: ObservableObject {
 
         // 바디 종료 부분
         body.append("--\(boundary)--\r\n".data(using: .utf8)!)
-
+        
         request.httpBody = body
+        print("request: \(request.httpMethod)")
         
         let session = URLSession(configuration: .default)
         session.configuration.timeoutIntervalForRequest = TimeInterval(20)
         session.configuration.timeoutIntervalForResource = TimeInterval(20)
+        
         let task = session.uploadTask(with: request, from: body) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error?.localizedDescription ?? "No error description")")
